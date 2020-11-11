@@ -1,12 +1,15 @@
 
+   
+
 ## WalletApi 
-![example workflow name](https://github.com/samuelagm/walletApi/workflows/.Net%20Core/badge.svg)
+![.NET Core](https://github.com/samuelagm/walletApi/workflows/.NET%20Core/badge.svg)
 
 ---
-####Getting Started
-.Net Core version: 3.1
-Run: `dotnet run`
-Test: `dotnet test`
+#### Getting Started
+.Net Core version: 3.1 
+Install Deps: `dotnet restore` 
+Run: `dotnet run -p WalletApi`  
+Test: `dotnet test`  
 #### Brief
 
 A simple wallet service that performs the following functions

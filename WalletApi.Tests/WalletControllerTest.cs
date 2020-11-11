@@ -64,7 +64,7 @@ namespace WalletApi.Tests
                 Timestamp = 1605037286186,
                 WalletId = "1735613419",
             };
-            Assert.Equal(null, (await walletController.CreateTransaction(command)));
+            Assert.Null((await walletController.CreateTransaction(command)));
         }
 
         [Fact]
