@@ -1,5 +1,6 @@
 
-## WalletApi
+## WalletApi 
+![example workflow name](https://github.com/samuelagm/walletApi/workflows/.Net%20Core/badge.svg)
 
 ---
 ####Getting Started
