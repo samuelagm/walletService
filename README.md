@@ -6,9 +6,12 @@
 
 ---
 #### Getting Started
-.Net Core version: 3.1 
-Install Deps: `dotnet restore` 
+.Net Core version: 3.1  
+
+Install Deps: `dotnet restore`  
+
 Run: `dotnet run -p WalletApi`  
+
 Test: `dotnet test`  
 #### Brief
 

@@ -56,7 +56,7 @@ namespace WalletApi.Tests
 
 
         [Fact]
-        public async Task NoWithdrawalFromEmptyAccount()
+        public async Task NoWithdrawalFromEmptyWallet()
         {
             CreateTransactionOrderCommand command = new CreateTransactionOrderCommand
             {
