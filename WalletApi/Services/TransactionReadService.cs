@@ -17,18 +17,18 @@ namespace WalletApi.Services
             _context = context;
         }
         
-        public async Task<ActionResult<ICollection<Transaction>>> GetTransactions(GetTransactionsQuery query)
+        public async Task<ActionResult<IEnumerable<Transaction>>> GetTransactions(GetTransactionsQuery query)
         {
             return await _context.Transactions.Where(x => x.WalletId == query.WalletId).Take(50).ToListAsync();
 
         }
 
-        public Task<ActionResult<ICollection<Transaction>>> GetPaginatedTransactions(GetPaginatedTransactionsQuery query)
+        public Task<ActionResult<IEnumerable<Transaction>>> GetPaginatedTransactions(GetPaginatedTransactionsQuery query)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ActionResult<ICollection<Transaction>>> GetTransactiomsByDateRange(GetTransactiomsByDateRangeQuery query)
+        public Task<ActionResult<IEnumerable<Transaction>>> GetTransactiomsByDateRange(GetTransactiomsByDateRangeQuery query)
         {
             throw new NotImplementedException();
         }

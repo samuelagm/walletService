@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 
 namespace WalletApi.Models
@@ -8,7 +9,6 @@ namespace WalletApi.Models
             : base(options)
         {
         }
-
         public DbSet<Transaction> Transactions { get; set; }
     }
 }

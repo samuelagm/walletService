@@ -13,9 +13,9 @@ namespace WalletsApi.Queries
 
     public interface ITransactionReadQueryHandler
     {
-        public Task<ActionResult<ICollection<Transaction>>> GetTransactions(GetTransactionsQuery query);
-        public Task<ActionResult<ICollection<Transaction>>> GetPaginatedTransactions(GetPaginatedTransactionsQuery query);
-        public Task<ActionResult<ICollection<Transaction>>> GetTransactiomsByDateRange(GetTransactiomsByDateRangeQuery query);
+        public Task<ActionResult<IEnumerable<Transaction>>> GetTransactions(GetTransactionsQuery query);
+        public Task<ActionResult<IEnumerable<Transaction>>> GetPaginatedTransactions(GetPaginatedTransactionsQuery query);
+        public Task<ActionResult<IEnumerable<Transaction>>> GetTransactiomsByDateRange(GetTransactiomsByDateRangeQuery query);
     }
 
 

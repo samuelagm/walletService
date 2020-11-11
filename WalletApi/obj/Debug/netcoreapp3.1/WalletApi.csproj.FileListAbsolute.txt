@@ -120,3 +120,10 @@ C:\APPLAB\DOTNET\WalletApi\WalletApi\obj\Debug\netcoreapp3.1\staticwebassets\Wal
 C:\APPLAB\DOTNET\WalletApi\WalletApi\obj\Debug\netcoreapp3.1\WalletApi.dll
 C:\APPLAB\DOTNET\WalletApi\WalletApi\obj\Debug\netcoreapp3.1\WalletApi.pdb
 C:\APPLAB\DOTNET\WalletApi\WalletApi\obj\Debug\netcoreapp3.1\WalletApi.genruntimeconfig.cache
+c:\APPLAB\DOTNET\WalletApi\WalletApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+c:\APPLAB\DOTNET\WalletApi\WalletApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+c:\APPLAB\DOTNET\WalletApi\WalletApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+c:\APPLAB\DOTNET\WalletApi\WalletApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+c:\APPLAB\DOTNET\WalletApi\WalletApi\obj\Debug\netcoreapp3.1\WalletApi.MvcApplicationPartsAssemblyInfo.cs
+C:\APPLAB\DOTNET\WalletApi\WalletApi\bin\Debug\netcoreapp3.1\WalletApi.xml
+C:\APPLAB\DOTNET\WalletApi\WalletApi\obj\Debug\netcoreapp3.1\WalletApi.xml

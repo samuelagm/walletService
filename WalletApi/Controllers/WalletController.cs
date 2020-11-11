@@ -9,8 +9,12 @@ using WalletApi.Services;
 using WalletsApi.Commands;
 using WalletsApi.Queries;
 
+
 namespace WalletApi.Controllers
 {
+    ///<summary>
+    ///A microservice for Wallets
+    ///</summary>
     [ApiController]
     [Route("api/[controller]")]
     public class WalletController : ControllerBase
@@ -19,46 +23,56 @@ namespace WalletApi.Controllers
         private TransactionReadService _txReadService;
         private TransactionWriteService _txWriteService;
         private WalletWriteService _walletWriteService;
-        public WalletController(WalletContext walletContext, TransactionContext transactionContext)
+        public WalletController(ITransactionReadQueryHandler txReadService, ITransactionWriteCommandHandler txWriteService, IWalletWriteCommandHandler walletWriteService)
         {
-            _txReadService = new TransactionReadService(transactionContext);
-            _txWriteService = new TransactionWriteService(transactionContext, walletContext);
-            _walletWriteService = new WalletWriteService(walletContext);
-
+            _txReadService = (TransactionReadService)txReadService;
+            _txWriteService = (TransactionWriteService)txWriteService;
+            _walletWriteService = (WalletWriteService)walletWriteService;
         }
 
-        // POST: api/CreateWallet
+        ///<summary>
+        ///Creates a wallet and returns the wallet, the Id represents account/wallet number
+        ///</summary>
+        ///<returns><code>Wallet</code></returns>
         [HttpPost]
         public async Task<ActionResult<Wallet>> CreateWallet(CreateWalletCommand command)
         {
             return await _walletWriteService.CreateWallet(command);
         }
 
-        // POST: api/CreateTransaction
-        [HttpPost]
+        ///<summary>
+        ///This method is responsible for deposits and withdrawals on a wallet
+        ///</summary>
+        ///<remarks>
+        ///Sending a command with a negetive value would reduce the balance (withdrawal) 
+        ///while the wallet balance is greater than zero, 
+        ///while a positive value would increase the balance (deposit)
+        /// Sample withdrawal request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "value": -1000,
+        ///        "timestamp": "1605037286186",
+        ///        "WalletId": 1735613419
+        ///     }
+        ///The reason for this simple implementation is to make the 
+        ///transaction object compatible with event sourcing events 
+        ///that can be replayed to create the current state of a wallet
+        /// by summing all event values
+        ///</remarks>
+        [HttpPost("CreateTransaction")]
         public async Task<ActionResult<Transaction>> CreateTransaction(CreateTransactionOrderCommand command)
         {
             return await _txWriteService.CreateTransaction(command);
         }
 
-        // POST: api/GetTransactions
-        [HttpPost]
-        public async Task<ActionResult<ICollection<Transaction>>> GetTransactions(GetTransactionsQuery command)
+        ///<summary>
+        ///Gets first 50 transacctions on a wallet
+        ///</summary>
+        [HttpPost("GetTransactions")]
+        public async Task<ActionResult<IEnumerable<Transaction>>> GetTransactions(GetTransactionsQuery command)
         {
             return await _txReadService.GetTransactions(command);
         }
-
-        // [HttpGet]
-        // public IEnumerable<WeatherForecast> Get()
-        // {
-        //     var rng = new Random();
-        //     return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //     {
-        //         Date = DateTime.Now.AddDays(index),
-        //         TemperatureC = rng.Next(-20, 55),
-        //         Summary = Summaries[rng.Next(Summaries.Length)]
-        //     })
-        //     .ToArray();
-        // }
     }
 }

@@ -139,3 +139,8 @@ C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\obj\Debug\netcoreapp3.1\WalletApi.Tes
 C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\obj\Debug\netcoreapp3.1\WalletApi.Tests.dll
 C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\obj\Debug\netcoreapp3.1\WalletApi.Tests.pdb
 C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\obj\Debug\netcoreapp3.1\WalletApi.Tests.genruntimeconfig.cache
+C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\APPLAB\DOTNET\WalletApi\WalletApi.Tests\bin\Debug\netcoreapp3.1\WalletApi.xml

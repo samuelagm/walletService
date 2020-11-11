@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WalletApi</name>
+    </assembly>
+    <members>
+        <member name="T:WalletApi.Controllers.WalletController">
+            <summary>
+            A microservice for Wallets
+            </summary>
+        </member>
+        <member name="M:WalletApi.Controllers.WalletController.CreateWallet(WalletsApi.Commands.CreateWalletCommand)">
+            <summary>
+            Creates a wallet and returns the wallet, the Id represents account/wallet number
+            </summary>
+            <returns><code>Wallet</code></returns>
+        </member>
+        <member name="M:WalletApi.Controllers.WalletController.CreateTransaction(WalletsApi.Commands.CreateTransactionOrderCommand)">
+            <summary>
+            This method is responsible for deposits and withdrawals on a wallet
+            </summary>
+            <remarks>
+            Sending a command with a negetive value would reduce the balance (withdrawal) 
+            while the wallet balance is greater than zero, 
+            while a positive value would increase the balance (deposit)
+             Sample withdrawal request:
+            
+                 POST /Todo
+                 {
+                    "value": -1000,
+                    "timestamp": "1605037286186",
+                    "WalletId": 1735613419
+                 }
+            The reason for this simple implementation is to make the 
+            transaction object compatible with event sourcing events 
+            that can be replayed to create the current state of a wallet
+             by summing all event values
+            </remarks>
+        </member>
+        <member name="M:WalletApi.Controllers.WalletController.GetTransactions(WalletsApi.Queries.GetTransactionsQuery)">
+            <summary>
+            Gets first 50 transacctions on a wallet
+            </summary>
+        </member>
+        <member name="T:WalletApi.Services.WalletWriteService">
+            <summary>
+            Handles all write commands on a wallet
+            </summary>
+        </member>
+        <member name="M:WalletApi.Services.WalletWriteService.GenerateAccountNumber">
+            <summary>
+            A naive account number/walletId generator
+            </summary>
+        </member>
+    </members>
+</doc>

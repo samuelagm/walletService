@@ -10,6 +10,9 @@ using WalletsApi.Commands;
 
 namespace WalletApi.Services
 {
+    ///<summary>
+    ///Handles all write commands on a wallet
+    ///</summary>
     public class WalletWriteService : IWalletWriteCommandHandler
     {
         private readonly WalletContext _context;
@@ -96,6 +99,10 @@ namespace WalletApi.Services
 
             return wallet;
         }
+
+        ///<summary>
+        ///A naive account number/walletId generator
+        ///</summary>
         private string GenerateAccountNumber()
         {
             StringBuilder output = new StringBuilder();

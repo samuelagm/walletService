@@ -1,8 +1,15 @@
+using System;
+
 namespace WalletApi.Models
 {
 
     public class Transaction
     {
+        public Transaction()
+        {
+            Id = Guid.NewGuid();
+        }
+        public Guid Id { get; set; }
         public string WalletId { get; set; }
         public TransactionType Type { get; set; }
         public long WalletBalance { get; set; }

@@ -11,7 +11,6 @@ namespace WalletsApi.Commands
     {
         public System.Guid Id { get; }
         public string WalletId { get; set; }
-        public string CustomerId { get; set; }
     }
 
     public interface ITransactionWriteCommandHandler
@@ -30,7 +29,6 @@ namespace WalletsApi.Commands
         public DateTime CreatedAt { get; set; }
         public long Timestamp { get; set; }
         public string WalletId { get; set; }
-        public string CustomerId { get; set; }
     }
 
 }
