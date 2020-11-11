@@ -49,11 +49,11 @@ namespace WalletApi.Controllers
         ///while a positive value would increase the balance (deposit)
         /// Sample withdrawal request:
         ///
-        ///     POST /Todo
+        ///     POST api/Wallet/CreateTransaction
         ///     {
         ///        "value": -1000,
         ///        "timestamp": "1605037286186",
-        ///        "WalletId": 1735613419
+        ///        "walletId": 1735613419
         ///     }
         ///The reason for this simple implementation is to make the 
         ///transaction object compatible with event sourcing events 
