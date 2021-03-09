@@ -1,4 +1,4 @@
-## WalletApi
+## Wallet Service
 
 ![.NET Core](https://github.com/samuelagm/walletApi/workflows/.NET%20Core/badge.svg)
 
